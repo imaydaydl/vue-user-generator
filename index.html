@@ -1,0 +1,46 @@
+<!DOCTYPE HTML>
+<meta http-equiv="Content-Type" content="text/html; charset=utf8"/>
+<html lang="uk" translate="no" class="prepere">
+    <head>
+        <title class="lng" data-dbtext="title"></title>
+        <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+        <link href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" rel="stylesheet">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="css/index.css">
+    </head>
+    <body>
+        <div id="todo-list-example">
+            <div class="menu">
+                <div class="menu_left">
+                    <input type="radio" class="btn-check" id="all" v-model="status" :value="-1" autocomplete="off">
+                    <label class="btn" :class="{ 'btn-outline-primary': !darkTheme, 'btn-primary': darkTheme }" for="all">{{ langs[lang]['all'] }}</label>
+
+                    <input type="radio" class="btn-check" id="actives" v-model="status" :value="1" autocomplete="off">
+                    <label class="btn" :class="{ 'btn-outline-success': !darkTheme, 'btn-success': darkTheme }" for="actives">{{ langs[lang]['active'] }}</label>
+
+                    <input type="radio" class="btn-check" id="blocked" v-model="status" :value="0" autocomplete="off">
+                    <label class="btn" :class="{ 'btn-outline-danger': !darkTheme, 'btn-danger': darkTheme }" for="blocked">{{ langs[lang]['blocked'] }}</label>
+                </div>
+                <div class="menu_right">
+                    <input type="checkbox" class="btn-check" id="dt" v-model="darkTheme" @click="changeTheme" autocomplete="off">
+                    <label class="btn" :class="{ 'btn-outline-dark': !darkTheme, 'btn-light': darkTheme }" for="dt">{{ darkTheme ? langs[lang]['lighttheme'] : langs[lang]['darktheme'] }}</label>
+
+                    <input type="radio" class="btn-check" id="ukr" v-model="lang" :value="'ua'" autocomplete="off">
+                    <label class="btn flags" :class="{ 'btn-outline-secondary': !darkTheme, 'btn-secondary': darkTheme }" for="ukr"><img alt="Ukrainian" src="images/ukraine.png"></label>
+
+                    <input type="radio" class="btn-check" id="eng" v-model="lang" :value="'en'" autocomplete="off">
+                    <label class="btn flags" :class="{ 'btn-outline-secondary': !darkTheme, 'btn-secondary': darkTheme }" for="eng"><img alt="English" src="images/united-kingdom.png"></label>
+                </div>
+            </div>
+            
+            <users-list :users="filteredUsers" :langs="langs[lang]" @block="block" @unblock="unblock" @edit="edituser"></users-list>
+            
+            <counter-button @click="makeNewUsers" :langs="langs[lang]" :loading="generatingNewUsers"></counter-button>
+
+            <addus-form @submit="addGNewUser" :langs="langs[lang]" :loading="addingNewUser" :disabled="test" :user="editingUser" @cancel-editing-user="cancelEditingUser" @save-editing-user="saveEditingUser" ref="addusForm"></addus-form>
+        </div>
+        
+        <script src="js/index.js"></script>
+    </body>
+</html>

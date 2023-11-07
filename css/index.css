@@ -1,0 +1,145 @@
+html {
+    padding: 0;
+}
+
+body {
+    padding: 0px;
+    width: 100%;
+    background-color: #fff;
+    color: #000;
+}
+
+.dark_theme {
+    background-color: #292c33 !important;
+    color: #fff !important;
+}
+
+#todo-list-example {
+    padding: 15px;
+    width: 100%;
+}
+
+button.page_button {
+    display:inline;
+    background-color: #A122BF;
+    border-color: #A122BF;
+    border-radius: 5px;
+}
+
+button.page_button:hover {
+    background-color: #CE00FF;
+}
+
+button.page_button_pad {
+    padding: 5px;
+}
+
+body .menu {
+    display: table;
+    margin: 10px;
+    width: 99%;
+}
+
+.menu_left {
+    display: table-cell;
+    text-align: left;
+}
+
+.menu_right {
+    display: table-cell;
+    text-align: right;
+}
+
+.flags img {
+    vertical-align: sub;
+}
+
+input {
+    border-radius: 5px;
+    padding: 5px;
+}
+
+ul.list_user {
+    width: 100%;
+    display: table;
+    padding: 10px;
+}
+
+li.userblock {
+    display: table;
+    padding: 10px;
+    background-color: #DADADA;
+    border: 1px solid #000;
+    border-radius: 5px;
+    width: 100%;
+}
+
+.dark_theme li.userblock {
+    background-color: #9A9090;
+    border: 1px solid #000;
+    color: #000;
+}
+
+li.userblock:first-child {
+    font-weight: bold;
+}
+
+li div.first_cell {
+    display: table-cell;
+    padding-right: 5px;
+    width: 2%;
+    text-align: center;
+}
+
+li div.second_cell {
+    display: table-cell;
+    padding-right: 5px;
+    width: 80%;
+    padding-left: 5px;
+}
+
+li div.third_cell {
+    display: table-cell;
+    padding-right: 5px;
+    width: 10%;
+    text-align: center;
+}
+
+li div.fourth_cell {
+    display: table-cell;
+    width: 8%;
+    text-align: center;
+}
+
+div.fourth_cell button {
+    display: inline;
+}
+
+.add_form {
+    padding: 10px;
+}
+
+.formadd {
+    background-color: #DADADA;
+    border: 1px solid #000;
+    border-radius:5px;
+    padding: 10px;
+    color: #000;
+    margin-top: 10px;
+    width: 100%;
+    text-align:center;
+}
+
+.dark_theme .formadd {
+    border: 1px solid #000;
+    background-color: #9A9090;
+}
+
+#subbut {
+    width: 100%;
+    text-align:center;
+}
+
+.content-center {
+    justify-content: center;
+}
