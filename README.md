@@ -1,4 +1,3 @@
-# vue-user-generator
 # Vue user list generator
 
 ## UKR
